@@ -1,5 +1,5 @@
 {
-	"name": "go-sample",
+	"name": "grpc-go-server",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
@@ -26,14 +26,17 @@
 		"go.goroot": "/usr/local/go",
 		"go.toolsGopath": "/go/bin"
 	},
-	"workspaceMount": "source=${localWorkspaceFolder}/,target=/go/src/github.dip-net.co.jp/dip/rivaldata-initialize,type=bind,consistency=cached",
-	"workspaceFolder": "/go/src/github.dip-net.co.jp/dip/rivaldata-initialize",
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"golang.go"
+		"golang.go",
+		"shardulm94.trailing-spaces",
+		"streetsidesoftware.code-spell-checker",
+		"zxh404.vscode-proto3"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [
+		19003
+	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "go version",
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
