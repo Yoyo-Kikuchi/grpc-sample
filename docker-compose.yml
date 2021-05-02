@@ -1,0 +1,18 @@
+version: '3'
+services:
+
+  client:
+    build: ./nest-server
+    container_name: nest-grpc-client
+    restart: always
+    ports:
+      - 3000:3000
+    env_file: ./nest-server/.env
+
+  server-a:
+    build: ./go-server/
+    container_name: go-grpc-server
+    restart: always
+    ports:
+      - 50051:50051
+    env_file: ./go-server/.env
