@@ -1,6 +1,5 @@
-version: '3'
+version: "3"
 services:
-
   client:
     build: ./nest-server
     container_name: nest-grpc-client
@@ -16,3 +15,9 @@ services:
     ports:
       - 50051:50051
     env_file: ./go-server/.env
+
+  envoy-a:
+    build: ./go-server/proxy
+    container_name: envoy-grpc-go-server-proxy
+    ports:
+      - 9000:9000

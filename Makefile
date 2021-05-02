@@ -1,4 +1,4 @@
-.PHONY: build run
+.PHONY: build up stop rm down clean-images
 
 build:
 	docker-compose build --no-cache
@@ -14,3 +14,6 @@ rm:
 
 down:
 	docker-compose down
+
+clean-images:
+	docker image prune
