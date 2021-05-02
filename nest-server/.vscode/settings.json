@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
         "Fastify",
+        "Grpc",
+        "microservices",
         "nestjs"
     ]
 }

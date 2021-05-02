@@ -3,6 +3,7 @@ package service
 import (
 	"context"
 	"errors"
+	"fmt"
 
 	pb "github.com/Yoyo-Kikuchi/grpc-sample/go-server/src/pd"
 )
@@ -11,6 +12,7 @@ type MyCatService struct {
 }
 
 func (s *MyCatService) GetMyCat(ctx context.Context, message *pb.GetMyCatMessage) (*pb.MyCatResponse, error) {
+	fmt.Println(message)
 	switch message.TargetCat {
 	case "tama":
 		//たまはメインクーン

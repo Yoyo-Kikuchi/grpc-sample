@@ -9,29 +9,32 @@
 			"VARIANT": "14"
 		}
 	},
-
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash"
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"[typescript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode" // フォーマッタをprettierに指定
+		},
+		"editor.formatOnSave": true, // ファイル保存時にPrettierでフォーマット
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true // ファイル保存時にESLintでフォーマット
+		}
 	},
-
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"dbaeumer.vscode-eslint",
 		"shardulm94.trailing-spaces",
 		"esbenp.prettier-vscode",
 		"coenraads.bracket-pair-colorizer",
-		"streetsidesoftware.code-spell-checker"
+		"streetsidesoftware.code-spell-checker",
+		"zxh404.vscode-proto3"
 	],
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
 		3000
 	],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm install",
-
+	// "postCreateCommand": "npm install",
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "node"
 }
