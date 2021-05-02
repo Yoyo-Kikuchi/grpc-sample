@@ -11,7 +11,8 @@ import (
 )
 
 func main() {
-	listenPort, err := net.Listen("tcp", "0.0.0.0:19003")
+
+	listenPort, err := net.Listen("tcp", "0.0.0.0:50051")
 	if err != nil {
 		log.Fatalln(err)
 	}
